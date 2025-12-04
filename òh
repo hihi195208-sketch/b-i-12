@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luyện tập - Form input</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.5;
+      padding: 24px;
+      background: #f7f7f8;
+      color: #111;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px 28px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .title {
+      text-align: center; /* chữ "Bài làm" căn giữa */
+      margin-bottom: 18px;
+    }
+
+    .title h2 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .exercise {
+      font-weight: 700; /* chữ "Luyện tập:" in đậm */
+      margin-bottom: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid #e6e6e9;
+      padding: 12px;
+      border-radius: 6px;
+      background: #fbfbfc;
+    }
+
+    .card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1rem;
+    }
+
+    .examples {
+      margin: 8px 0 0 0;
+      padding-left: 18px;
+    }
+
+    .preview {
+      margin-top: 8px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="file"] {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #d0d0d4;
+      border-radius: 4px;
+    }
+
+    .small {
+      font-size: 0.88rem;
+      color: #444;
+    }
+
+    .full-row {
+      grid-column: 1 / -1;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h2>Bài làm</h2> <!-- căn giữa -->
+    </div>
+
+    <div class="exercise">Luyện tập:</div> <!-- in đậm -->
+
+    <p class="small">Lần lượt tạo các loại phần tử form và các phần tử input với những loại dữ liệu khác nhau và liệt kê ra ba ví dụ có thể sử dụng của từng loại.</p>
+
+    <form class="grid" action="#" method="post" enctype="multipart/form-data" novalidate>
+      <!-- text -->
+      <div class="card">
+        <h3>&lt;input type="text"&gt;</h3>
+        <div class="preview">
+          <label for="addr">Ví dụ giao diện: Địa chỉ</label>
+          <input id="addr" name="address" type="text" placeholder="Nhập địa chỉ..." />
+        </div>
+        <ul class="examples">
+          <li>Địa chỉ liên hệ (số nhà, phường, quận)</li>
+          <li>Sở thích hoặc mô tả ngắn (bio)</li>
+          <li>Tên trường / nơi học</li>
+        </ul>
+      </div>
+
+      <!-- password -->
+      <div class="card">
+        <h3>&lt;input type="password"&gt;</h3>
+        <div class="preview">
+          <label for="pwd">Ví dụ giao diện: Mật khẩu</label>
+          <input id="pwd" name="password" type="password" placeholder="Nhập mật khẩu..." />
+        </div>
+        <ul class="examples">
+          <li>Mật khẩu tài khoản</li>
+          <li>Mã OTP hoặc mã PIN (khi cần che ký tự)</li>
+          <li>Câu trả lời bảo mật khi lấy lại tài khoản</li>
+        </ul>
+      </div>
+
+      <!-- radio -->
+      <div class="card">
+        <h3>&lt;input type="radio"&gt;</h3>
+        <div class="preview">
+          <label>Ví dụ giao diện: Chọn lớp</label>
+          <label><input type="radio" name="class" value="10A" checked /> 10A</label>
+          <label><input type="radio" name="class" value="10B" /> 10B</label>
+          <label><input type="radio" name="class" value="10C" /> 10C</label>
+        </div>
+        <ul class="examples">
+          <li>Chọn lớp học / khóa học</li>
+          <li>Chọn khối thi (ví dụ A/B/C)</li>
+          <li>Lựa chọn hình thức nộp học phí (tiền mặt / chuyển khoản)</li>
+        </ul>
+      </div>
+
+      <!-- checkbox -->
+      <div class="card">
+        <h3>&lt;input type="checkbox"&gt;</h3>
+        <div class="preview">
+          <label>Ví dụ giao diện: Chọn môn chuyên</label>
+          <label><input type="checkbox" name="subjects" value="toan" /> Toán chuyên</label>
+          <label><input type="checkbox" name="subjects" value="ly" /> Lý chuyên</label>
+          <label><input type="checkbox" name="subjects" value="hoa" /> Hóa chuyên</label>
+        </div>
+        <ul class="examples">
+          <li>Chọn các môn chuyên để học thêm</li>
+          <li>Chọn loại sách / thể loại phim ưa thích</li>
+          <li>Chọn sở thích nhiều lựa chọn (âm nhạc, thể thao,...)</li>
+        </ul>
+      </div>
+
+      <!-- button -->
+      <div class="card">
+        <h3>&lt;button&gt; / &lt;input type="button"&gt;</h3>
+        <div class="preview">
+          <button type="button" onclick="alert('Ví dụ: nút tải về');">Tải về</button>
+          <button type="button" onclick="alert('Ví dụ: cập nhật');">Cập nhật</button>
+        </div>
+        <ul class="examples">
+          <li>Nút bấm "Tải về" (download)</li>
+          <li>Nút "Cập nhật" trong form</li>
+          <li"Nút chuyển trang / quên mật khẩu" (trigger chuyển hướng hoặc modal)</li>
+        </ul>
+      </div>
+
+      <!-- file -->
+      <div class="card">
+        <h3>&lt;input type="file"&gt;</h3>
+        <div class="preview">
+          <label for="fileUpload">Ví dụ giao diện: Tải tệp ảnh</label>
+          <input id="fileUpload" name="fileUpload" type="file" accept="image/*,application/pdf" />
+        </div>
+        <ul class="examples">
+          <li>Tải ảnh đăng kí / ảnh đại diện</li>
+          <li>Tải bài thi / bài tập dưới dạng PDF</li>
+          <li>Tải ảnh căn cước / giấy tờ (scan)</li>
+        </ul>
+      </div>
+
+      <!-- full width note -->
+      <div class="card full-row">
+        <h3>Ghi chú</h3>
+        <p class="small">Bạn có thể mở rộng thêm các loại input khác (email, tel, number, date, range, color, textarea, select, v.v.) tùy mục đích. Mỗi loại input có những cách dùng phù hợp để cải thiện trải nghiệm người dùng và tính hợp lệ dữ liệu.</p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
