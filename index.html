@@ -203,4 +203,44 @@
     </form>
   </div>
 </body>
+  <html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu mẫu đăng ký thành viên</title>
+</head>
+<body>
+
+    <h3>Vận dụng</h3>
+    <p><b>Vận dụng 1:</b> Tạo một biểu mẫu đăng kí thành viên câu lạc bộ.</p>
+
+    <h2>Đăng ký thành viên câu lạc bộ</h2>
+
+    <form action="/submit_registration" method="post">
+
+        <label for="fullname">Họ và tên:</label><br>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="birthdate">Ngày sinh:</label><br>
+        <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+        <label>Giới tính:</label><br>
+        <input type="radio" id="male" name="gender" value="Nam">
+        <label for="male">Nam</label><br>
+
+        <input type="radio" id="female" name="gender" value="Nữ">
+        <label for="female">Nữ</label><br><br>
+
+        <label for="membership">Loại hình thành viên:</label><br>
+        <select id="membership" name="membership">
+            <option value="basic">Thành viên cơ bản</option>
+            <option value="premium">Thành viên cao cấp</option>
+            <option value="vip">Thành viên VIP</option>
+        </select><br><br>
+        <input type="submit" value="Đăng ký">
+    </form>
+</body>
 </html>
